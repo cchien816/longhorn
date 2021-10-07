@@ -985,7 +985,7 @@ spec:
     spec:
       containers:
       - name: longhorn-manager
-        image: longhornio/longhorn-manager:v1.2.x-head
+        image: jenting/longhorn-manager:v1.2.2
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
