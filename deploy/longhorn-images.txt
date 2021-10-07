@@ -4,8 +4,14 @@ k8s.gcr.io/sig-storage/csi-resizer:v1.2.0
 k8s.gcr.io/sig-storage/csi-snapshotter:v3.0.3
 k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.3.0
 longhornio/backing-image-manager:v2_20210820
-longhornio/longhorn-engine:v1.2.0
+longhornio/longhorn-engine:v1.2.1
 longhornio/longhorn-instance-manager:v1_20210731
+<<<<<<< HEAD
 longhornio/longhorn-manager:v1.2.0
 longhornio/longhorn-share-manager:v1_20210914
 longhornio/longhorn-ui:v1.2.0
+=======
+longhornio/longhorn-manager:v1.2.1
+longhornio/longhorn-share-manager:v1_20210914
+longhornio/longhorn-ui:v1.2.1
+>>>>>>> 2262652ef703a6356cd20f0ad72086fb86085357
