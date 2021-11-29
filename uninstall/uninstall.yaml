@@ -101,7 +101,11 @@ spec:
     spec:
       containers:
       - name: longhorn-uninstall
+<<<<<<< HEAD
         image: longhornio/longhorn-manager:v1.2.1-rc2
+=======
+        image: longhornio/longhorn-manager:v1.1.3-rc2
+>>>>>>> 5f22f2ab7ce9afaf5818d9fe3908fc57c203ee21
         imagePullPolicy: Always
         securityContext:
           privileged: true
