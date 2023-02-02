@@ -839,7 +839,5 @@ Set the value to **0** to disable backup restore."
     label: Setting test
     description: "A test"
     group: "Longhorn Default Settings"
-    type: int
-    min: 0
-    max: 100
-    default: 55
+    type: string
+    default: ""
