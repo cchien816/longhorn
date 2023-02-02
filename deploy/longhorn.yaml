@@ -3871,11 +3871,11 @@ spec:
     spec:
       initContainers:
       - name: wait-longhorn-admission-webhook
-        image: longhornio/longhorn-manager:master-head
+        image: chanow/longhorn-manager:test
         command: ['sh', '-c', 'while [ $(curl -m 1 -s -o /dev/null -w "%{http_code}" -k https://longhorn-admission-webhook:9443/v1/healthz) != "200" ]; do echo waiting; sleep 2; done']
       containers:
       - name: longhorn-manager
-        image: longhornio/longhorn-manager:master-head
+        image: chanow/longhorn-manager:test
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
@@ -3894,7 +3894,7 @@ spec:
         - --support-bundle-manager-image
         - "longhornio/support-bundle-kit:v0.0.17"
         - --manager-image
-        - "longhornio/longhorn-manager:master-head"
+        - "chanow/longhorn-manager:test"
         - --service-account
         - longhorn-service-account
         ports:
@@ -3970,18 +3970,18 @@ spec:
     spec:
       initContainers:
         - name: wait-longhorn-manager
-          image: longhornio/longhorn-manager:master-head
+          image: chanow/longhorn-manager:test
           command: ['sh', '-c', 'while [ $(curl -m 1 -s -o /dev/null -w "%{http_code}" http://longhorn-backend:9500/v1) != "200" ]; do echo waiting; sleep 2; done']
       containers:
         - name: longhorn-driver-deployer
-          image: longhornio/longhorn-manager:master-head
+          image: chanow/longhorn-manager:test
           imagePullPolicy: IfNotPresent
           command:
           - longhorn-manager
           - -d
           - deploy-driver
           - --manager-image
-          - "longhornio/longhorn-manager:master-head"
+          - "chanow/longhorn-manager:test"
           - --manager-url
           - http://longhorn-backend:9500/v1
           env:
@@ -4051,7 +4051,7 @@ spec:
               topologyKey: kubernetes.io/hostname
       containers:
       - name: longhorn-recovery-backend
-        image: longhornio/longhorn-manager:master-head
+        image: chanow/longhorn-manager:test
         imagePullPolicy: IfNotPresent
         securityContext:
           runAsUser: 2000
@@ -4180,7 +4180,7 @@ spec:
               topologyKey: kubernetes.io/hostname
       containers:
       - name: longhorn-conversion-webhook
-        image: longhornio/longhorn-manager:master-head
+        image: chanow/longhorn-manager:test
         imagePullPolicy: IfNotPresent
         securityContext:
           runAsUser: 2000
@@ -4240,14 +4240,14 @@ spec:
               topologyKey: kubernetes.io/hostname
       initContainers:
       - name: wait-longhorn-conversion-webhook
-        image: longhornio/longhorn-manager:master-head
+        image: chanow/longhorn-manager:test
         command: ['sh', '-c', 'while [ $(curl -m 1 -s -o /dev/null -w "%{http_code}" -k https://longhorn-conversion-webhook:9443/v1/healthz) != "200" ]; do echo waiting; sleep 2; done']
         imagePullPolicy: IfNotPresent
         securityContext:
           runAsUser: 2000
       containers:
       - name: longhorn-admission-webhook
-        image: longhornio/longhorn-manager:master-head
+        image: chanow/longhorn-manager:test
         imagePullPolicy: IfNotPresent
         securityContext:
           runAsUser: 2000
