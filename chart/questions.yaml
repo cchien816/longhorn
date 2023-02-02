@@ -835,3 +835,11 @@ Set the value to **0** to disable backup restore."
   label: Rancher Windows Cluster
   type: boolean
   group: "Other Settings"
+- variable: defaultSettings.settingTest
+    label: Setting test
+    description: "A test"
+    group: "Longhorn Default Settings"
+    type: int
+    min: 0
+    max: 100
+    default: 55

@@ -105,6 +105,7 @@ csi:
   snapshotterReplicaCount: ~
 
 defaultSettings:
+  settingTest: ~
   backupTarget: ~
   backupTargetCredentialSecret: ~
   allowRecurringJobWhileVolumeDetached: ~
