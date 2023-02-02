@@ -840,4 +840,4 @@ Set the value to **0** to disable backup restore."
     description: "A test"
     group: "Longhorn Default Settings"
     type: string
-    default: ""
+    default:
